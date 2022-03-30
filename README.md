@@ -2,11 +2,11 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *Sven*
-- *naam van leerling 2*
+- *Sven speksnijder*
+- *alvin xie *
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*wij willen een game maken waar een popetje wordt achtervolg door een rollende steen en waarbij je obstakels moet ontwijken en kristaletjes moet pakken. in het spel moet je zo lang mogelijk rennen en neit afgaan en zoveel mogelijk kristaltjes oppakken*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>

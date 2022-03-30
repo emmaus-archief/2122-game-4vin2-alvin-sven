@@ -26,7 +26,13 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
-
+ 
+if(keyIsDown(87)&&spelerY<800 ) {
+    spelerY=spelerY-7
+}
+else {
+  spelerY=700, spelerY<700
+}
   // vijand
 
   // kogel
@@ -51,13 +57,14 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+  fill('green')
+rect(0, 0, 1280,720 )
   // vijand
 
   // kogel
 
   // speler
-  fill("white");
+  fill("blue");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
@@ -89,7 +96,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('green');
 }
 
 /**
