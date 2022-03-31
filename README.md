@@ -1,9 +1,9 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: *ik heb honger*
 Gemaakt door:
 - *Sven speksnijder*
-- *alvin xie *
+- *alvin xie*
 
 ### Beschrijving
 *wij willen een game maken waar een popetje wordt achtervolg door een rollende steen en waarbij je obstakels moet ontwijken en kristaletjes moet pakken. in het spel moet je zo lang mogelijk rennen en neit afgaan en zoveel mogelijk kristaltjes oppakken*

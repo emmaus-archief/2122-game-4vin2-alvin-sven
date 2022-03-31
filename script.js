@@ -14,8 +14,8 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 200; // x-positie van speler
+var spelerY = 400; // y-positie van speler
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -65,9 +65,14 @@ rect(0, 0, 1280,720 )
 
   // speler
   fill("blue");
+  rect(spelerX - 25, spelerY - 50, 40, 40);
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+
+  ellipse(spelerX + 15, spelerY - 10, 10, 10);
+  ellipse(spelerX - 15, spelerY - 10, 10, 10);
+  fill(200, 0 , 0);
+  ellipse(spelerX, spelerY + 10, 20, 20);
 
   // punten en health
 
