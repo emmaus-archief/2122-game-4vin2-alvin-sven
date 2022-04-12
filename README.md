@@ -70,3 +70,21 @@ https://emmauscollege.github.io/informatica/game/
 - icon <br>
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
+## planning
+- week 15: de beweging van de poppetje moet werken en de obstakels ( dus springen en rennen.)
+
+- week 16: werkende code (punten) en basis game af
+
+- week 17: meivakantie
+
+- week 18 : meivakantie
+
+- week 19 : designs voor de punten, vijand en obstakels en werkend maken in de game
+
+- week 20 : werkende menu (pauzeren, etc)
+
+- week 21 : mooiere graphics
+
+- week 22 : puntjes op de i 
+
+- week 23 : testen en fouten verbeteren
