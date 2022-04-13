@@ -17,6 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
+var vijandX = [400, 300, 700, 450] // x-positie van vijand
+var vijandY = [400, 280, 500, 100] // y-positie van vijand
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -36,10 +38,12 @@ if(keyIsDown(83)) {
 if (spelerY < 50 ){
   spelerY = 50
 }
-if (spelerY > 680){
-  spelerY = 680
+if (spelerY > 690){
+  spelerY = 690
 }
   // vijand
+
+
 
   // kogel
 };
@@ -66,6 +70,10 @@ var tekenAlles = function () {
   fill('green')
 rect(0, 0, 1280,720 )
   // vijand
+  fill("black")
+  for(var i = 0; i < 3; i++){
+    rect(vijandX[i], vijandY[i], 50, 50)
+  }
 
   // kogel
 
