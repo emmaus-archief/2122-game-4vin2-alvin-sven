@@ -27,11 +27,11 @@ var spelerY = 400; // y-positie van speler
 var beweegAlles = function () {
   // speler
  
-if(keyIsDown(87)&&spelerY<800 ) {
-    spelerY=spelerY-7
+if(keyIsDown(87)&&spelerY>50) {
+    spelerY = spelerY - 7
 }
 else {
-  spelerY=700, spelerY<700
+  spelerY = spelerY + 7
 }
   // vijand
 
