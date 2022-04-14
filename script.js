@@ -17,8 +17,10 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [400, 300, 700, 450] // x-positie van vijand
-var vijandY = [400, 280, 500, 100] // y-positie van vijand
+var vijandX = [400] // x-positie van vijand
+var vijandY = [400] // y-positie van vijand
+
+var speed = 7 // snellheid van beweging
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -30,13 +32,19 @@ var beweegAlles = function () {
   // speler
  
 if(keyIsDown(87)) {
-    spelerY = spelerY - 7
+    spelerY = spelerY - speed
 }
 if(keyIsDown(83)) {
-  spelerY = spelerY + 7
+  spelerY = spelerY + speed
 }
-if (spelerY < 50 ){
-  spelerY = 50
+if(keyIsDown(16)){
+  speed = speed + 0.5
+}
+else{
+  speed = 7
+}
+if (spelerY < 55 ){
+  spelerY = 55
 }
 if (spelerY > 690){
   spelerY = 690
@@ -68,12 +76,17 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
   fill('green')
-rect(0, 0, 1280,720 )
+  rect(0, 0, 1280,720 )
   // vijand
   fill("black")
-  for(var i = 0; i < 3; i++){
-    rect(vijandX[i], vijandY[i], 50, 50)
-  }
+  for(var i = 0; i < vijandX.length; i++){
+    if(vijandX > 0){
+      vijandX = vijandX - 1;
+      rect(vijandX[i], vijandY[i], 50, 50)
+    }
+
+}
+  
 
   // kogel
 
