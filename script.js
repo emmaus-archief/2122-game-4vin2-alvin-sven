@@ -80,9 +80,11 @@ var tekenAlles = function () {
   // vijand
   fill("black")
   for(var i = 0; i < vijandX.length; i++){
-      rect(vijandX[i], vijandY[i], 50, 50);
-
+    if(vijandX[i] > 0){
+    vijandX[i]= vijandX[i] - 5;
+    rect(vijandX[i], vijandY[i], 50, 50);
     }
+  }
   
 
 
