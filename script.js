@@ -38,7 +38,7 @@ if(keyIsDown(83)) {
   spelerY = spelerY + speed
 }
 if(keyIsDown(16)){
-  speed = speed + 0.5
+  speed = 14
 }
 else{
   speed = 7
