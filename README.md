@@ -1,12 +1,12 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *ik heb honger*
+## Mijn spel: *snelle raket*
 Gemaakt door:
 - *Sven speksnijder*
 - *alvin xie*
 
 ### Beschrijving
-*wij willen een game maken waar een popetje wordt achtervolg door een raket en waarbij je obstakels moet ontwijken en kristaletjes moet pakken. in het spel moet je zo lang mogelijk vliegen en niet afgaan en zoveel mogelijk kristaltjes oppakken*
+*je bent een rakket richting putin en je moet alle andere rakketen die naar je worden geschoten ontwijken en eventueel wat brandstof oppakken zodat je lang genoeg kan vliegen*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -15,17 +15,17 @@ Geef aan met [x] welke onderdelen af zijn
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
-- [ ] 2. teken speler
+- [x] 2. teken speler
         - Zet je code in de functie tekenAlles()
-- [ ] 3. beweeg speler
+- [x] 3. beweeg speler
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
+- [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
 - [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
-- [ ] x. zet punten op het scherm 
+- [x] x. beweeg de tegenspeler of je bal
+- [x] x. zet punten op het scherm 
 - [ ] x. zorg dat je punten kunt scoren
 - [ ] x. zorg dat je af kunt
 - [ ] x. maak game-over-scherm

@@ -20,6 +20,9 @@ var spelerY = 400; // y-positie van speler
 var vijandX = [1000] // x-positie van vijand
 var vijandY = [400] // y-positie van vijand
 
+var puntX = [900]
+var puntY = [100]
+
 var speed = 7 // snellheid van beweging
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -63,7 +66,13 @@ if (spelerY > 690){
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+if ( spelerX - vijandX < 50 &&
+     spelerX - vijandX < -50 &&
+     spelerY - vijandY < 50 &&
+     spelerY - vijandY < -50){
+       console.log ("botsing");
+     }
+    
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -94,7 +103,6 @@ var tekenAlles = function () {
 
   // speler
   fill("blue");
-  rect(spelerX - 25, spelerY - 50, 40, 40);
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
 
@@ -104,7 +112,13 @@ var tekenAlles = function () {
   ellipse(spelerX, spelerY + 10, 20, 20);
 
   // punten en health
-
+  fill("yellow")
+  for(var ia = 0; ia < puntX.length; ia++){
+    if(puntX[ia] > 0){
+    puntX[ia]= puntX[ia] - 5;
+    rect(puntX[ia], puntY[ia], 50, 50);
+    }
+  }
 };
 
 /**
