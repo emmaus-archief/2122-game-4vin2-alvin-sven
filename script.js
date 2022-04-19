@@ -17,7 +17,7 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [400] // x-positie van vijand
+var vijandX = [1000] // x-positie van vijand
 var vijandY = [400] // y-positie van vijand
 
 var speed = 7 // snellheid van beweging
@@ -80,12 +80,12 @@ var tekenAlles = function () {
   // vijand
   fill("black")
   for(var i = 0; i < vijandX.length; i++){
-    if(vijandX > 0){
-      vijandX = vijandX - 1;
-      rect(vijandX[i], vijandY[i], 50, 50)
-    }
+      rect(vijandX[i], vijandY[i], 50, 50);
 
-}
+    }
+  
+
+
   
 
   // kogel
@@ -128,7 +128,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('green');
+  background('light blue');
 }
 
 /**
