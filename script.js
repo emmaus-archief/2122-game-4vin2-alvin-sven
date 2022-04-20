@@ -85,8 +85,9 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  fill('green')
+  fill("rgb(10, 169, 198)")
   rect(0, 0, 1280,720 )
+  
   // vijand
   fill("black")
   for(var i = 0; i < vijandX.length; i++){
