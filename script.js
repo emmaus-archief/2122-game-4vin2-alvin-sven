@@ -17,8 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [1000] // x-positie van vijand
-var vijandY = [400] // y-positie van vijand
+var vijandX = [1000, 400] // x-positie van vijand
+var vijandY = [400, 400] // y-positie van vijand
 
 var puntX = [900]
 var puntY = [100]
@@ -46,8 +46,8 @@ if(keyIsDown(16)){
 else{
   speed = 7
 }
-if (spelerY < 55 ){
-  spelerY = 55
+if (spelerY < 25 ){
+  spelerY = 25
 }
 if (spelerY > 690){
   spelerY = 690
@@ -66,7 +66,8 @@ if (spelerY > 690){
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if ( spelerX - vijandX < 50 &&
+
+  if ( spelerX - vijandX < 50 &&
      spelerX - vijandX < -50 &&
      spelerY - vijandY < 50 &&
      spelerY - vijandY < -50){
