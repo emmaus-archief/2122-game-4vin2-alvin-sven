@@ -67,12 +67,6 @@ if (spelerY > 690){
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 
-  if ( spelerX - vijandX < 50 &&
-     spelerX - vijandX < -50 &&
-     spelerY - vijandY < 50 &&
-     spelerY - vijandY < -50){
-       console.log ("botsing");
-     }
     
   // botsing kogel tegen vijand
 
@@ -94,9 +88,13 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
+    if (spelerX - vijandX[i] > 50 &&
+        spelerX - vijandX[i] > -50){
+        console.log ("botsing")
+
     }
   }
-  
+  }
 
 
   
