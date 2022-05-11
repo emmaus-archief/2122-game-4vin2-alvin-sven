@@ -66,7 +66,14 @@ if (spelerY > 690){
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+for(var a = 0; a<vijandY.length; a++){
+  if(spelerY - vijandY[a] < -50 &&
+     spelerY - vijandY[a] < 50 &&
+     spelerX - vijandX[a] < 50 &&
+     spelerX - vijandX[a] < -50){
+       console.log ("botsing")
+     }
+}
     
   // botsing kogel tegen vijand
 
