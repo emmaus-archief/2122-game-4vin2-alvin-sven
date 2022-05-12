@@ -67,10 +67,10 @@ if (spelerY > 690){
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 for(var a = 0; a<vijandY.length; a++){
-  if(spelerY - vijandY[a] < -50 &&
-     spelerY - vijandY[a] < 50 &&
-     spelerX - vijandX[a] < 50 &&
-     spelerX - vijandX[a] < -50){
+  if(spelerY - vijandY[a] > -50 &&
+     spelerY - vijandY[a] > 50 &&
+     spelerX - vijandX[a] > 50 &&
+     spelerX - vijandX[a] > -50){
        console.log ("botsing")
      }
 }
@@ -93,13 +93,8 @@ var tekenAlles = function () {
   fill("black")
   for(var i = 0; i < vijandX.length; i++){
     if(vijandX[i] > 0){
-    vijandX[i]= vijandX[i] - 5;
+    vijandX[i]= vijandX[i] - 1;
     rect(vijandX[i], vijandY[i], 50, 50);
-    if (spelerX - vijandX[i] > 50 &&
-        spelerX - vijandX[i] > -50){
-        console.log ("botsing")
-
-    }
   }
   }
 
@@ -110,10 +105,10 @@ var tekenAlles = function () {
 
   // speler
   fill("blue");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
+  rect(spelerX, spelerY, 50, 50);
   fill("black");
 
-  ellipse(spelerX + 15, spelerY - 10, 10, 10);
+  ellipse(spelerX, spelerY - 10, 10, 10);
   ellipse(spelerX - 15, spelerY - 10, 10, 10);
   fill(200, 0 , 0);
   ellipse(spelerX, spelerY + 10, 20, 20);
