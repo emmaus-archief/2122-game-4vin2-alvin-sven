@@ -17,8 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [1000, 400] // x-positie van vijand
-var vijandY = [400, 400] // y-positie van vijand
+var vijandX = [1000] // x-positie van vijand
+var vijandY = [400] // y-positie van vijand
 
 var puntX = [900]
 var puntY = [100]
@@ -93,7 +93,7 @@ var tekenAlles = function () {
   fill("black")
   for(var i = 0; i < vijandX.length; i++){
     if(vijandX[i] > 0){
-    vijandX[i]= vijandX[i] - 1;
+    vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
   }
   }
@@ -108,10 +108,6 @@ var tekenAlles = function () {
   rect(spelerX, spelerY, 50, 50);
   fill("black");
 
-  ellipse(spelerX, spelerY - 10, 10, 10);
-  ellipse(spelerX - 15, spelerY - 10, 10, 10);
-  fill(200, 0 , 0);
-  ellipse(spelerX, spelerY + 10, 20, 20);
 
   // punten en health
   fill("yellow")
