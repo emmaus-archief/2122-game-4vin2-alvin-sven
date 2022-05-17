@@ -1,3 +1,8 @@
+let img;
+function preload(){
+  img = loadImage('missille_PNG32.png');
+}
+
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
@@ -22,6 +27,8 @@ var vijandY = [400] // y-positie van vijand
 
 var puntX = [900]
 var puntY = [100]
+
+var img; //plaatje van speler
 
 var speed = 7 // snellheid van beweging
 /* ********************************************* */
@@ -95,8 +102,11 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
+    Image(img, vijandX[i]-25, vijandY[i]-25, 50, 50)
   }
   }
+
+  
 
 
   
@@ -132,6 +142,9 @@ var checkGameOver = function () {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 
+function preload () {
+  img = loadImage('missille_PNG32.png')
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
