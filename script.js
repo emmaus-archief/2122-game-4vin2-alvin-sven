@@ -1,7 +1,11 @@
-let img;
-function preload(){
-  img = loadImage('missille_PNG32.png');
+var img;
+function preload () {
+  img = loadImage('missile_PNG32.png')
 }
+
+/* Game opdracht
+   Informatica - Emmauscollege Rotterdam
+   
 
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
@@ -143,7 +147,7 @@ var checkGameOver = function () {
 /* ********************************************* */
 
 function preload () {
-  img = loadImage('missille_PNG32.png')
+  img = loadImage('missile_PNG32.png')
 }
 /**
  * setup
