@@ -1,7 +1,4 @@
-var img;
-function preload () {
-  img = loadImage('missile_PNG32.png')
-}
+
 
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
@@ -106,7 +103,7 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
-    Image(img, vijandX[i]-25, vijandY[i]-25, 50, 50)
+  
   }
   }
 
@@ -146,6 +143,7 @@ var checkGameOver = function () {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 
+/** in deze functie laden wij de plaatjes */
 function preload () {
   img = loadImage('missile_PNG32.png')
 }
