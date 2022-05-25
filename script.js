@@ -1,5 +1,3 @@
-
-
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    
@@ -18,13 +16,14 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const uitleg = 3;
 var spelStatus = SPELEN;
 
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [1000] // x-positie van vijand
-var vijandY = [400] // y-positie van vijand
+var vijandX = [3000, 2800, 2600, 2400, 2200, 1000, 800, 600, 400] // x-positie van vijand
+var vijandY = [100, 300, 700, 100, 550, 400, 200, 300, 600] // y-positie van vijand
 
 var puntX = [900]
 var puntY = [100]
@@ -103,10 +102,10 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
-  
-  }
   }
 
+  }
+ 
   
 
 
@@ -176,6 +175,10 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
+
+  }
+  if (spelStatus === uitleg) {
+    // teken uitleg scherm
 
   }
 }
