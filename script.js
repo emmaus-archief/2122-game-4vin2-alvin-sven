@@ -105,21 +105,11 @@ var tekenAlles = function () {
   }
 
   }
- 
+  //speler
+  image(img,spelerX,spelerY-32, 100, 100);
   
 
-
-  
-
-  // kogel
-
-  // speler
-  fill("blue");
-  rect(spelerX, spelerY, 50, 50);
-  fill("black");
-
-
-  // punten en health
+// punten en health
   fill("yellow")
   for(var ia = 0; ia < puntX.length; ia++){
     if(puntX[ia] > 0){
