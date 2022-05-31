@@ -29,6 +29,7 @@ var puntX = [900]
 var puntY = [100]
 
 var img; //plaatje van speler
+var plaatje; //plaatje vijanden
 
 var speed = 7 // snellheid van beweging
 /* ********************************************* */
@@ -63,7 +64,7 @@ if (spelerY > 690){
 
 
 
-  // kogel
+  
 };
 
 /**
@@ -102,10 +103,11 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
+    image(plaatje,vijandX[i],vijandY[i]-32, 100, 100);
   }
 
   }
-  //speler
+  //speler (plaatje)
   image(img,spelerX,spelerY-32, 100, 100);
   
 
@@ -135,6 +137,9 @@ var checkGameOver = function () {
 /** in deze functie laden wij de plaatjes */
 function preload () {
   img = loadImage('missile_PNG32.png')
+}
+function preload () {
+  plaatje = loadImage('monster game.webp')
 }
 /**
  * setup

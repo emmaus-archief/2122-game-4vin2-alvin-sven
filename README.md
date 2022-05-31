@@ -6,7 +6,7 @@ Gemaakt door:
 - *alvin xie*
 
 ### Beschrijving
-*je bent een rakket richting putin en je moet alle andere rakketen die naar je worden geschoten ontwijken en eventueel wat brandstof oppakken zodat je lang genoeg kan vliegen*
+*je bent een rakket richting putin en je moet alle monsters die naar je worden geschoten ontwijken en eventueel wat brandstof oppakken zodat je lang genoeg kan vliegen*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -23,7 +23,7 @@ Basis: uitleg, spelen, afgaan en punten
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
 - [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
+- [x ] x. teken een bal, kogel (als die in je spel zit)
 - [x] x. beweeg de tegenspeler of je bal
 - [x] x. zet punten op het scherm 
 - [ ] x. zorg dat je punten kunt scoren
@@ -33,9 +33,9 @@ Basis: uitleg, spelen, afgaan en punten
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+- [x ] *later uitwerken*
+- [x ] *later uitwerken*
+- [x ] *later uitwerken*
 
 ### Uitbreidingen 2
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
