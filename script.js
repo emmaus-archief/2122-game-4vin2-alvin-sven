@@ -103,7 +103,7 @@ var tekenAlles = function () {
     if(vijandX[i] > 0){
     vijandX[i]= vijandX[i] - 5;
     rect(vijandX[i], vijandY[i], 50, 50);
-    image(plaatje,vijandX[i],vijandY[i]-32, 100, 100);
+    image(plaatje,vijandX[i],vijandY[i], 50, 50);
   }
 
   }
