@@ -172,13 +172,26 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
   console.log("game over")
-  textSize(60);
+  textSize(50);
   fill("red");
   text("game over,", 400, 600);
-  text("druk op spatie om weer te starten", 400, 700)
+  text("druk op spatie om weer te starten", 400, 650)
+  if (keyIsDown(32)) {
+  
+    spelStatus = UITLEG;
+  }
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
-    console.log("game over")
+    console.log("uitleg")
+    textSize(40)
+    fill("red")
+    rect(0, 0, 1280, 720)
+    fill("black")
+    text("uitleg: druk enter om de game te spelen , in game enter is sneller w naar boven en s naar beneden. je moet de fisjes pakken, 100, 100")
+    if (keyIsDown(13)) {
+    spelerX = 200;
+      spelStatus = SPELEN;
+    }
   }
 }
