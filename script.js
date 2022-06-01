@@ -172,6 +172,9 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
   console.log("game over")
+  textSize(60);
+  fill("red");
+  text("game over", 500, 600);
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
