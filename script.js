@@ -17,7 +17,7 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
-var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
@@ -167,15 +167,16 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
-    console.log("spelen")
+    console.log("spelen");
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-  console.log("game over")
+  console.log("game over");
   textSize(50);
   fill("red");
   text("game over,", 400, 600);
-  text("druk op spatie om weer te starten", 400, 650)
+  text("druk op spatie om naar uitleg te gaan", 400, 650);
+  text("en druk enter om de game te herstarten", 400, 700);
   if (keyIsDown(32)) {
   
     spelStatus = UITLEG;
@@ -183,12 +184,14 @@ function draw() {
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
-    console.log("uitleg")
-    textSize(40)
-    fill("red")
-    rect(0, 0, 1280, 720)
-    fill("black")
-    text("uitleg: druk enter om de game te spelen , in game enter is sneller w naar boven en s naar beneden. je moet de fisjes pakken, 100, 100")
+    console.log("uitleg");
+    textSize(40);
+    fill("red");
+    rect(0, 0, 1280, 720);
+    fill("black");
+    text("uitleg: druk enter om de game te spelen", 100, 100);
+    text("in game shift is sneller w naar boven en s naar beneden. ", 100, 150);
+    text("je moet de fisjes pakken", 100, 200);
     if (keyIsDown(13)) {
     spelerX = 200;
       spelStatus = SPELEN;
