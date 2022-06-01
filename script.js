@@ -174,7 +174,8 @@ function draw() {
   console.log("game over")
   textSize(60);
   fill("red");
-  text("game over", 500, 600);
+  text("game over,", 400, 600);
+  text("druk op spatie om weer te starten", 400, 700)
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
