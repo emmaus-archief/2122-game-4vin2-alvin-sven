@@ -108,7 +108,7 @@ var tekenAlles = function () {
 
   }
   //speler (plaatje)
-  image(img,spelerX,spelerY-32, 100, 100);
+ image(img,spelerX,spelerY-32, 100, 100);
   
 
 // punten en health
@@ -137,8 +137,6 @@ var checkGameOver = function () {
 /** in deze functie laden wij de plaatjes */
 function preload () {
   img = loadImage('missile_PNG32.png')
-}
-function preload () {
   plaatje = loadImage('monster game.webp')
 }
 /**
