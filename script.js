@@ -41,30 +41,30 @@ var speed = 7 // snellheid van beweging
  */
 var beweegAlles = function () {
   // speler
- 
-if(keyIsDown(87)) {
+
+  if (keyIsDown(87)) {
     spelerY = spelerY - speed
-}
-if(keyIsDown(83)) {
-  spelerY = spelerY + speed
-}
-if(keyIsDown(16)){
-  speed = 14
-}
-else{
-  speed = 7
-}
-if (spelerY < 25 ){
-  spelerY = 25
-}
-if (spelerY > 690){
-  spelerY = 690
-}
+  }
+  if (keyIsDown(83)) {
+    spelerY = spelerY + speed
+  }
+  if (keyIsDown(16)) {
+    speed = 14
+  }
+  else {
+    speed = 7
+  }
+  if (spelerY < 10) {
+    spelerY = 10
+  }
+  if (spelerY > 660) {
+    spelerY = 660
+  }
   // vijand
 
 
 
-  
+
 };
 
 /**
@@ -76,10 +76,10 @@ var verwerkBotsing = function () {
   // botsing speler tegen vijand
 
 }
-    
-  // botsing kogel tegen vijand
 
-  // update punten en health
+// botsing kogel tegen vijand
+
+// update punten en health
 
 //};
 
@@ -89,28 +89,28 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
   fill("rgb(10, 169, 198)")
-  rect(0, 0, 1280,720 )
-  
+  rect(0, 0, 1280, 720)
+
   // vijand
   fill("black")
-  for(var i = 0; i < vijandX.length; i++){
-    if(vijandX[i] > 0){
-    vijandX[i]= vijandX[i] - 5;
-    rect(vijandX[i], vijandY[i], 50, 50);
-    image(plaatje,vijandX[i],vijandY[i], 50, 50);
-  }
+  for (var i = 0; i < vijandX.length; i++) {
+    if (vijandX[i] > 0) {
+      vijandX[i] = vijandX[i] - 5;
+      rect(vijandX[i], vijandY[i], 50, 50);
+      image(plaatje, vijandX[i], vijandY[i], 50, 50);
+    }
 
   }
   //speler (plaatje)
- image(img,spelerX,spelerY-32, 100, 100);
-  
+  image(img, spelerX, spelerY - 32, 100, 100);
 
-// punten en health
+
+  // punten en health
   fill("yellow")
-  for(var ia = 0; ia < puntX.length; ia++){
-    if(puntX[ia] > 0){
-    puntX[ia]= puntX[ia] - 5;
-    rect(puntX[ia], puntY[ia], 50, 50);
+  for (var ia = 0; ia < puntX.length; ia++) {
+    if (puntX[ia] > 0) {
+      puntX[ia] = puntX[ia] - 5;
+      rect(puntX[ia], puntY[ia], 50, 50);
     }
   }
 };
@@ -121,14 +121,14 @@ var tekenAlles = function () {
  */
 var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
-  for(var a = 0; a<vijandY.length; a++)
-    if(spelerY - vijandY[a] > -50 &&
-       spelerY - vijandY[a] < 50 &&
-       spelerX - vijandX[a] < 50 &&
-       spelerX - vijandX[a] > -50){
-         console.log ("botsing");
-         return true;
-       }
+  for (var a = 0; a < vijandY.length; a++)
+    if (spelerY - vijandY[a] > -50 &&
+      spelerY - vijandY[a] < 50 &&
+      spelerX - vijandX[a] < 50 &&
+      spelerX - vijandX[a] > -50) {
+      console.log("botsing");
+      return true;
+    }
   return false;
 };
 
@@ -137,7 +137,7 @@ var checkGameOver = function () {
 /* ********************************************* */
 
 /** in deze functie laden wij de plaatjes */
-function preload () {
+function preload() {
   img = loadImage('missile_PNG32.png')
   plaatje = loadImage('monster game.webp')
 }
@@ -171,29 +171,36 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-  console.log("game over");
-  textSize(50);
-  fill("red");
-  text("game over,", 400, 600);
-  text("druk op spatie om naar uitleg te gaan", 400, 650);
-  text("en druk enter om de game te herstarten", 400, 700);
-  if (keyIsDown(32)) {
-  
-    spelStatus = UITLEG;
-  }
+    console.log("game over");
+    textSize(50);
+
+    fill("red");
+    text("game over,", 400, 600);
+    text("druk op spatie om naar uitleg te gaan", 400, 650);
+    text("en druk enter om de game te herstarten", 400, 700);
+
+
+    if (keyIsDown(32)) {
+
+      spelStatus = UITLEG;
+    }
+    if (keyIsDown(13)) { // ENTER
+
+      spelStatus = SPELEN;
+      spelerY = 400;
+    }
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
     console.log("uitleg");
     textSize(40);
-    fill("red");
+    fill("gray");
     rect(0, 0, 1280, 720);
     fill("black");
     text("uitleg: druk enter om de game te spelen", 100, 100);
     text("in game shift is sneller w naar boven en s naar beneden. ", 100, 150);
     text("je moet de fisjes pakken", 100, 200);
     if (keyIsDown(13)) {
-    spelerX = 200;
       spelStatus = SPELEN;
     }
   }
