@@ -94,13 +94,15 @@ var tekenAlles = function () {
   // vijand
   fill("black")
   for (var i = 0; i < vijandX.length; i++) {
-    if (vijandX[i] > 0) {
+    if (vijandX[i] >= 0) {
       vijandX[i] = vijandX[i] - 5;
       rect(vijandX[i], vijandY[i], 50, 50);
       image(plaatje, vijandX[i], vijandY[i], 50, 50);
     }
-
   }
+
+
+
   //speler (plaatje)
   image(img, spelerX, spelerY - 32, 100, 100);
 
