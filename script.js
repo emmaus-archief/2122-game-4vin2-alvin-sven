@@ -28,6 +28,9 @@ var circles = function (){
   function getRandomInt(max) {
     return Math.floor(Math.random() * max)
   }
+  if (spelStatus ===spelen){
+
+  }
 }
 
 var puntX = [900]
@@ -205,7 +208,7 @@ function draw() {
     // teken uitleg scherm
     console.log("uitleg");
     textSize(40);
-    fill("gray");
+    fill("rgb(89,255,145)");
     rect(0, 0, 1280, 720);
     fill("black");
     text("uitleg: druk enter om de game te spelen", 100, 100);
