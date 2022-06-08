@@ -24,12 +24,18 @@ var spelerY = 400; // y-positie van speler
 
 var vijandX = [3000, 2800, 2600, 2400, 2200, 1000, 800, 600, 400] // x-positie van vijand
 var vijandY = [100, 300, 700, 100, 550, 400, 200, 300, 600] // y-positie van vijand
+var circles = function (){
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max)
+  }
+}
 
 var puntX = [900]
 var puntY = [100]
 
 var img; //plaatje van speler
 var plaatje; //plaatje vijanden
+
 
 var speed = 7 // snellheid van beweging
 /* ********************************************* */
@@ -40,6 +46,8 @@ var speed = 7 // snellheid van beweging
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
+  //random vijanden
+
   // speler
 
   if (keyIsDown(87)) {
@@ -190,6 +198,7 @@ function draw() {
 
       spelStatus = SPELEN;
       spelerY = 400;
+      
     }
   }
   if (spelStatus === UITLEG) {
@@ -204,6 +213,16 @@ function draw() {
     text("je moet de fisjes pakken", 100, 200);
     if (keyIsDown(13)) {
       spelStatus = SPELEN;
+      spelerY=400;
+      spelerX=200;
+      fill("black")
+      for (var i = 0; i < vijandX.length; i++) {
+        if (vijandX[i] >= 0) {
+          vijandX[i] = vijandX[i] - 5;
+          rect(vijandX[i], vijandY[i], 50, 50);
+          image(plaatje, vijandX[i], vijandY[i], 50, 50);
+        }
+      }
     }
   }
 }
