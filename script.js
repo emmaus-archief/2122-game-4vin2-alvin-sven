@@ -76,9 +76,9 @@ var beweegAlles = function () {
   // vijand
   for (var i = 0; i < vijandX.length; i++) {
  
-    vijandX[i] = vijandX[i] - 5;
+    vijandX[i] = vijandX[i] - 10;
     if (vijandX[i] < 0) {
-      vijandX[i] = random (1200, 3000);
+      vijandX[i] = random (1200, 2000);
     }
   }
 
