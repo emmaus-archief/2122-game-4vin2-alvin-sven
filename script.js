@@ -22,8 +22,10 @@ var spelStatus = UITLEG;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [3000, 2800, 2600, 2400, 2200, 1000, 800, 600, 400] // x-positie van vijand
-var vijandY = [100, 300, 700, 100, 550, 400, 200, 300, 600] // y-positie van vijand
+var vijandX = [0, 0, 0, 0, 0, 0, 0, 0, 0] // x-positie van vijand
+var vijandY = [0, 0, 0, 0, 0, 0, 0, 0, 0] // y-positie van vijand
+
+
 var circles = function (){
   function getRandomInt(max) {
     return Math.floor(Math.random() * max)
@@ -72,7 +74,13 @@ var beweegAlles = function () {
     spelerY = 660
   }
   // vijand
-
+  for (var i = 0; i < vijandX.length; i++) {
+ 
+    vijandX[i] = vijandX[i] - 5;
+    if (vijandX[i] < 0) {
+      vijandX[i] = random (1200, 3000);
+    }
+  }
 
 
 
@@ -105,13 +113,11 @@ var tekenAlles = function () {
   // vijand
   fill("black")
   for (var i = 0; i < vijandX.length; i++) {
-    if (vijandX[i] >= 0) {
-      vijandX[i] = vijandX[i] - 5;
+ 
       rect(vijandX[i], vijandY[i], 50, 50);
       image(plaatje, vijandX[i], vijandY[i], 50, 50);
     }
-  }
-
+  
 
 
   //speler (plaatje)
@@ -135,10 +141,10 @@ var tekenAlles = function () {
 var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
   for (var a = 0; a < vijandY.length; a++)
-    if (spelerY - vijandY[a] > -50 &&
-      spelerY - vijandY[a] < 50 &&
+    if (spelerY - vijandY[a] > -38 &&
+      spelerY - vijandY[a] < 38 &&
       spelerX - vijandX[a] < 50 &&
-      spelerX - vijandX[a] > -50) {
+      spelerX - vijandX[a] > -100) {
       console.log("botsing");
       return true;
     }
@@ -165,6 +171,13 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background('light blue');
+ 
+  // randomize field
+  for (var i=0; i<vijandX.length; i++) {
+    vijandX[i] = random(1200,3000);
+    vijandY[i] = random(50, 680);
+  }
+  
 }
 
 /**
@@ -220,12 +233,14 @@ function draw() {
       spelerX=200;
       fill("black")
       for (var i = 0; i < vijandX.length; i++) {
-        if (vijandX[i] >= 0) {
-          vijandX[i] = vijandX[i] - 5;
+        if ( vijandX[i] )  
+        vijandX[i] = vijandX[i] - 5;
           rect(vijandX[i], vijandY[i], 50, 50);
           image(plaatje, vijandX[i], vijandY[i], 50, 50);
+          
         }
       }
     }
   }
-}
+
+
