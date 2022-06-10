@@ -22,8 +22,8 @@ var spelStatus = UITLEG;
 var spelerX = 200; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 
-var vijandX = [0, 0, 0, 0, 0, 0, 0, 0, 0] // x-positie van vijand
-var vijandY = [0, 0, 0, 0, 0, 0, 0, 0, 0] // y-positie van vijand
+var vijandX = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // x-positie van vijand
+var vijandY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // y-positie van vijand
 
 
 var circles = function (){
@@ -133,6 +133,14 @@ var tekenAlles = function () {
     }
   }
 };
+for(var i = 0; i<puntX.length; i++){
+  if(spelerX - puntX[i] > -100 &&
+    spelerX - puntX[i] < 50 &&
+    spelerY - puntY[i] < 38 &&
+    spelerY - puntY[i] > -38) {
+    console.log("botsing_punt");
+    }
+};
 
 /**
  * return true als het gameover is
@@ -174,8 +182,8 @@ function setup() {
  
   // randomize field
   for (var i=0; i<vijandX.length; i++) {
-    vijandX[i] = random(1200,3000);
-    vijandY[i] = random(50, 680);
+    vijandX[i] = random(1200,1500);
+    vijandY[i] = random(25, 750);
   }
   
 }
