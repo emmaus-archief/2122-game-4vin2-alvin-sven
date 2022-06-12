@@ -35,8 +35,8 @@ var circles = function (){
   }
 }
 
-var puntX = [900]
-var puntY = [100]
+var puntX = [0, 0, 0]
+var puntY = [0, 0, 0]
 
 var img; //plaatje van speler
 var plaatje; //plaatje vijanden
@@ -81,6 +81,14 @@ var beweegAlles = function () {
       vijandX[i] = random (1200, 2000);
     }
   }
+  // punten
+  for (var i = 0; i < puntX.length; i++) {
+   puntX[i] = puntX[i] - 10;
+   if (puntX[i] < 0) {
+    puntX[i] = random (1200, 1500);
+
+  }
+}
 
 
 
@@ -127,13 +135,11 @@ var tekenAlles = function () {
   // punten en health
   fill("yellow")
   for (var ia = 0; ia < puntX.length; ia++) {
-    if (puntX[ia] > 0) {
-      puntX[ia] = puntX[ia] - 5;
       rect(puntX[ia], puntY[ia], 50, 50);
     }
-  }
 };
-for(var i = 0; i<puntX.length; i++){
+
+for(var i = 0; i < puntX.length; i++){
   if(spelerX - puntX[i] > -100 &&
     spelerX - puntX[i] < 50 &&
     spelerY - puntY[i] < 38 &&
@@ -182,10 +188,14 @@ function setup() {
  
   // randomize field
   for (var i=0; i<vijandX.length; i++) {
-    vijandX[i] = random(1200,1500);
+
     vijandY[i] = random(25, 750);
   }
-  
+
+  for (var i = 0; i < puntX.length; i++) {
+
+    puntY[i] = random(25, 750);
+  }
 }
 
 /**
