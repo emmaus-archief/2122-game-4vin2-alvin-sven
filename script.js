@@ -45,7 +45,6 @@ var speed = 7 // snellheid van beweging
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
-  //random vijanden
 
   // speler
 
@@ -69,40 +68,23 @@ var beweegAlles = function () {
   }
   // vijand
   for (var i = 0; i < vijandX.length; i++) {
- 
+
     vijandX[i] = vijandX[i] - 10;
     if (vijandX[i] < 0) {
-      vijandX[i] = random (1200, 2000);
+      vijandX[i] = random(1200, 2000);
     }
   }
   // punten
   for (var i = 0; i < puntX.length; i++) {
-   puntX[i] = puntX[i] - 10;
-   if (puntX[i] < 0) {
-    puntX[i] = random (1200, 1500);
-
+    puntX[i] = puntX[i] - 10;
+    if (puntX[i] < 0) {
+      puntX[i] = random(1100, 1500);
+    }
   }
-}
 
 
 
 };
-
-/**
- * Checkt botsingen
- * Verwijdert neergeschoten dingen
- * Updatet globale variabelen punten en health
- */
-var verwerkBotsing = function () {
-  // botsing speler tegen vijand
-
-}
-
-// botsing kogel tegen vijand
-
-// update punten en health
-
-//};
 
 /**
  * Tekent spelscherm
@@ -115,11 +97,10 @@ var tekenAlles = function () {
   // vijand
   fill("black")
   for (var i = 0; i < vijandX.length; i++) {
- 
-      rect(vijandX[i], vijandY[i], 50, 50);
-      image(plaatje, vijandX[i], vijandY[i], 50, 50);
-    }
-  
+    rect(vijandX[i], vijandY[i], 50, 50);
+    image(plaatje, vijandX[i], vijandY[i], 50, 50);
+  }
+
 
 
   //speler (plaatje)
@@ -129,17 +110,17 @@ var tekenAlles = function () {
   // punten en health
   fill("yellow")
   for (var ia = 0; ia < puntX.length; ia++) {
-      rect(puntX[ia], puntY[ia], 50, 50);
-    }
+    rect(puntX[ia], puntY[ia], 50, 50);
+  }
 };
 
-for(var i = 0; i < puntX.length; i++){
-  if(spelerX - puntX[i] > -100 &&
+for (var i = 0; i < puntX.length; i++) {
+  if (spelerX - puntX[i] > -100 &&
     spelerX - puntX[i] < 50 &&
     spelerY - puntY[i] < 38 &&
     spelerY - puntY[i] > -38) {
     console.log("botsing_punt");
-    }
+  }
 };
 
 /**
@@ -179,9 +160,9 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background('light blue');
- 
+
   // randomize field
-  for (var i=0; i<vijandX.length; i++) {
+  for (var i = 0; i < vijandX.length; i++) {
 
     vijandY[i] = random(25, 750);
   }
@@ -212,15 +193,16 @@ function draw() {
     console.log("game over");
     textSize(50);
 
+    background("black");
     fill("red");
     text("game over,", 400, 600);
     text("druk op spatie om naar uitleg te gaan", 400, 650);
     text("en druk enter om de game te herstarten", 400, 700);
-    
-    for (var i = 0; i < vijandX.length; i++){
-    if (vijandX[i] <= 1200){
-      vijandX[i] = 0
-    }
+
+    for (var i = 0; i < vijandX.length; i++) {
+      if (vijandX[i] <= 1200) {
+        vijandX[i] = 0
+      }
     }
     if (keyIsDown(32)) {
 
@@ -230,7 +212,7 @@ function draw() {
 
       spelStatus = SPELEN;
       spelerY = 400;
-      
+
     }
   }
   if (spelStatus === UITLEG) {
@@ -245,18 +227,18 @@ function draw() {
     text("je moet de fisjes pakken", 100, 200);
     if (keyIsDown(13)) {
       spelStatus = SPELEN;
-      spelerY=400;
-      spelerX=200;
+      spelerY = 400;
+      spelerX = 200;
       fill("black")
       for (var i = 0; i < vijandX.length; i++) {
-        if ( vijandX[i] )  
-        vijandX[i] = vijandX[i] - 5;
-          rect(vijandX[i], vijandY[i], 50, 50);
-          image(plaatje, vijandX[i], vijandY[i], 50, 50);
-          
-        }
+        if (vijandX[i])
+          vijandX[i] = vijandX[i] - 5;
+        rect(vijandX[i], vijandY[i], 50, 50);
+        image(plaatje, vijandX[i], vijandY[i], 50, 50);
+
       }
     }
   }
+}
 
 
