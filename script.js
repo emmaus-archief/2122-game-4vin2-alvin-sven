@@ -26,14 +26,8 @@ var vijandX = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // x-positie van vijand
 var vijandY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // y-positie van vijand
 
 
-var circles = function (){
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max)
-  }
-  if (spelStatus ===spelen){
 
-  }
-}
+
 
 var puntX = [0, 0, 0]
 var puntY = [0, 0, 0]
@@ -222,8 +216,12 @@ function draw() {
     text("game over,", 400, 600);
     text("druk op spatie om naar uitleg te gaan", 400, 650);
     text("en druk enter om de game te herstarten", 400, 700);
-
-
+    
+    for (var i = 0; i < vijandX.length; i++){
+    if (vijandX[i] <= 1200){
+      vijandX[i] = 0
+    }
+    }
     if (keyIsDown(32)) {
 
       spelStatus = UITLEG;
